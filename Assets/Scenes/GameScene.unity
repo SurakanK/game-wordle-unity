@@ -6101,6 +6101,63 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61175241814ac46568cb536df19e18a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  keyCaps:
+  - keyCode: 113
+    button: {fileID: 1088050546}
+  - keyCode: 119
+    button: {fileID: 620998998}
+  - keyCode: 101
+    button: {fileID: 335076018}
+  - keyCode: 114
+    button: {fileID: 1793106846}
+  - keyCode: 116
+    button: {fileID: 447794278}
+  - keyCode: 121
+    button: {fileID: 830891082}
+  - keyCode: 117
+    button: {fileID: 96371143}
+  - keyCode: 105
+    button: {fileID: 714095106}
+  - keyCode: 111
+    button: {fileID: 139181626}
+  - keyCode: 112
+    button: {fileID: 2082572591}
+  - keyCode: 97
+    button: {fileID: 575128366}
+  - keyCode: 115
+    button: {fileID: 1412814062}
+  - keyCode: 100
+    button: {fileID: 1757924151}
+  - keyCode: 102
+    button: {fileID: 1515826891}
+  - keyCode: 103
+    button: {fileID: 1760418497}
+  - keyCode: 104
+    button: {fileID: 1174550305}
+  - keyCode: 106
+    button: {fileID: 315734887}
+  - keyCode: 107
+    button: {fileID: 1691180707}
+  - keyCode: 108
+    button: {fileID: 639995758}
+  - keyCode: 271
+    button: {fileID: 161606078}
+  - keyCode: 122
+    button: {fileID: 1017718960}
+  - keyCode: 120
+    button: {fileID: 1010637326}
+  - keyCode: 99
+    button: {fileID: 846721978}
+  - keyCode: 118
+    button: {fileID: 753424307}
+  - keyCode: 98
+    button: {fileID: 64602063}
+  - keyCode: 110
+    button: {fileID: 2058533441}
+  - keyCode: 109
+    button: {fileID: 476588465}
+  - keyCode: 8
+    button: {fileID: 705346545}
 --- !u!1 &864242736
 GameObject:
   m_ObjectHideFlags: 0
