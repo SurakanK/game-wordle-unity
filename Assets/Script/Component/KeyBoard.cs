@@ -17,26 +17,11 @@ public class KeyBoard : MonoBehaviour
 
     public Action<KeyCode> OnKeyPress;
 
-    private static KeyBoard _instance;
-    public static KeyBoard Instance
-    {
-        get
-        {
-            if (_instance == null)
-            {
-                _instance = FindObjectOfType<KeyBoard>();
-            }
-
-            return _instance;
-        }
-    }
-
     private void Awake()
     {
         OnKeyCaps();
     }
 
-    // Update is called once per frame
     void Update()
     {
 #if UNITY_EDITOR
@@ -50,7 +35,7 @@ public class KeyBoard : MonoBehaviour
         {
             if (Input.GetKeyDown(keyCap.keyCode))
             {
-                OnKeyPress.Invoke(keyCap.keyCode);
+                OnKeyPress?.Invoke(keyCap.keyCode);
             }
         }
     }
@@ -61,8 +46,38 @@ public class KeyBoard : MonoBehaviour
         {
             keyCap.button.onClick.AddListener(() =>
             {
-                OnKeyPress.Invoke(keyCap.keyCode);
+                OnKeyPress?.Invoke(keyCap.keyCode);
             });
         }
+    }
+
+    public void KeyCapHighlight(KeyCode keyCode, Color color)
+    {
+        var keyCap = keyCaps.Find(e => e.keyCode == keyCode);
+        Highlight(keyCap, color);
+    }
+
+    public void ClearKeyCapHighlight()
+    {
+        foreach (var keyCap in keyCaps)
+        {
+            Highlight(keyCap, Color.white);
+        }
+    }
+
+    private void Highlight(KeyCap keyCap, Color color)
+    {
+        var keyCapColor = keyCap.button.transform.GetComponent<Image>().color;
+        if (color != Color.white && keyCapColor == GameColor.Green)
+        {
+            return;
+        }
+
+        keyCap.button.transform.GetComponent<Image>().color = color;
+    }
+
+    public void active(bool isActive)
+    {
+        gameObject.SetActive(isActive);
     }
 }
